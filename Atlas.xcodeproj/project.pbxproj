@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		968694CE19CB59710030957B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694CD19CB59710030957B /* main.m */; };
+		968694D119CB59710030957B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694D019CB59710030957B /* AppDelegate.m */; };
+		968694D419CB59710030957B /* Atlas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 968694D219CB59710030957B /* Atlas.xcdatamodeld */; };
+		968694D719CB59710030957B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694D619CB59710030957B /* MasterViewController.m */; };
+		968694DA19CB59710030957B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694D919CB59710030957B /* DetailViewController.m */; };
+		968694DD19CB59710030957B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968694DB19CB59710030957B /* Main.storyboard */; };
+		968694DF19CB59710030957B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 968694DE19CB59710030957B /* Images.xcassets */; };
+		968694E219CB59710030957B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968694E019CB59710030957B /* LaunchScreen.xib */; };
+		968694EE19CB59710030957B /* AtlasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694ED19CB59710030957B /* AtlasTests.m */; };
+		968694F919CB5AC50030957B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694F819CB5AC50030957B /* Person.m */; };
+		968694FF19CB5BE70030957B /* AtlasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694FE19CB5BE70030957B /* AtlasModel.m */; };
+		9686950319CB77460030957B /* Atlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686950219CB77460030957B /* Atlas.m */; };
+		9686950619CB7E3D0030957B /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686950519CB7E3D0030957B /* CoreDataHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		968694E819CB59710030957B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 968694C019CB59710030957B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 968694C719CB59710030957B;
+			remoteInfo = Atlas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		968694C819CB59710030957B /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		968694CC19CB59710030957B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968694CD19CB59710030957B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		968694CF19CB59710030957B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		968694D019CB59710030957B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		968694D319CB59710030957B /* Atlas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Atlas.xcdatamodel; sourceTree = "<group>"; };
+		968694D519CB59710030957B /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		968694D619CB59710030957B /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		968694D819CB59710030957B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		968694D919CB59710030957B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		968694DC19CB59710030957B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		968694DE19CB59710030957B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		968694E119CB59710030957B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		968694E719CB59710030957B /* AtlasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		968694EC19CB59710030957B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968694ED19CB59710030957B /* AtlasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtlasTests.m; sourceTree = "<group>"; };
+		968694F719CB5AC50030957B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		968694F819CB5AC50030957B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		968694FD19CB5BE70030957B /* AtlasModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtlasModel.h; sourceTree = "<group>"; };
+		968694FE19CB5BE70030957B /* AtlasModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtlasModel.m; sourceTree = "<group>"; };
+		9686950119CB77460030957B /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
+		9686950219CB77460030957B /* Atlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atlas.m; sourceTree = "<group>"; };
+		9686950419CB7E3D0030957B /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		9686950519CB7E3D0030957B /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		968694C519CB59710030957B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968694E419CB59710030957B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		968694BF19CB59710030957B = {
+			isa = PBXGroup;
+			children = (
+				968694CA19CB59710030957B /* Atlas */,
+				968694EA19CB59710030957B /* AtlasTests */,
+				968694C919CB59710030957B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		968694C919CB59710030957B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				968694C819CB59710030957B /* Atlas.app */,
+				968694E719CB59710030957B /* AtlasTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		968694CA19CB59710030957B /* Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				968694CF19CB59710030957B /* AppDelegate.h */,
+				968694D019CB59710030957B /* AppDelegate.m */,
+				968694FA19CB5B970030957B /* Models */,
+				968694FC19CB5BAB0030957B /* Views */,
+				968694FB19CB5BA20030957B /* Controllers */,
+				968694CB19CB59710030957B /* Supporting Files */,
+			);
+			path = Atlas;
+			sourceTree = "<group>";
+		};
+		968694CB19CB59710030957B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				968694CC19CB59710030957B /* Info.plist */,
+				968694CD19CB59710030957B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		968694EA19CB59710030957B /* AtlasTests */ = {
+			isa = PBXGroup;
+			children = (
+				968694ED19CB59710030957B /* AtlasTests.m */,
+				968694EB19CB59710030957B /* Supporting Files */,
+			);
+			path = AtlasTests;
+			sourceTree = "<group>";
+		};
+		968694EB19CB59710030957B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				968694EC19CB59710030957B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		968694FA19CB5B970030957B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				968694D219CB59710030957B /* Atlas.xcdatamodeld */,
+				968694FD19CB5BE70030957B /* AtlasModel.h */,
+				968694FE19CB5BE70030957B /* AtlasModel.m */,
+				968694F719CB5AC50030957B /* Person.h */,
+				968694F819CB5AC50030957B /* Person.m */,
+				9686950119CB77460030957B /* Atlas.h */,
+				9686950219CB77460030957B /* Atlas.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		968694FB19CB5BA20030957B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9686950419CB7E3D0030957B /* CoreDataHelper.h */,
+				9686950519CB7E3D0030957B /* CoreDataHelper.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		968694FC19CB5BAB0030957B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				968694DB19CB59710030957B /* Main.storyboard */,
+				968694DE19CB59710030957B /* Images.xcassets */,
+				968694E019CB59710030957B /* LaunchScreen.xib */,
+				968694D519CB59710030957B /* MasterViewController.h */,
+				968694D619CB59710030957B /* MasterViewController.m */,
+				968694D819CB59710030957B /* DetailViewController.h */,
+				968694D919CB59710030957B /* DetailViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		968694C719CB59710030957B /* Atlas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968694F119CB59710030957B /* Build configuration list for PBXNativeTarget "Atlas" */;
+			buildPhases = (
+				968694C419CB59710030957B /* Sources */,
+				968694C519CB59710030957B /* Frameworks */,
+				968694C619CB59710030957B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Atlas;
+			productName = Atlas;
+			productReference = 968694C819CB59710030957B /* Atlas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		968694E619CB59710030957B /* AtlasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 968694F419CB59710030957B /* Build configuration list for PBXNativeTarget "AtlasTests" */;
+			buildPhases = (
+				968694E319CB59710030957B /* Sources */,
+				968694E419CB59710030957B /* Frameworks */,
+				968694E519CB59710030957B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				968694E919CB59710030957B /* PBXTargetDependency */,
+			);
+			name = AtlasTests;
+			productName = AtlasTests;
+			productReference = 968694E719CB59710030957B /* AtlasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		968694C019CB59710030957B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Back Forty";
+				TargetAttributes = {
+					968694C719CB59710030957B = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					968694E619CB59710030957B = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 968694C719CB59710030957B;
+					};
+				};
+			};
+			buildConfigurationList = 968694C319CB59710030957B /* Build configuration list for PBXProject "Atlas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 968694BF19CB59710030957B;
+			productRefGroup = 968694C919CB59710030957B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				968694C719CB59710030957B /* Atlas */,
+				968694E619CB59710030957B /* AtlasTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		968694C619CB59710030957B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968694DD19CB59710030957B /* Main.storyboard in Resources */,
+				968694E219CB59710030957B /* LaunchScreen.xib in Resources */,
+				968694DF19CB59710030957B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968694E519CB59710030957B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		968694C419CB59710030957B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968694FF19CB5BE70030957B /* AtlasModel.m in Sources */,
+				968694F919CB5AC50030957B /* Person.m in Sources */,
+				968694DA19CB59710030957B /* DetailViewController.m in Sources */,
+				9686950619CB7E3D0030957B /* CoreDataHelper.m in Sources */,
+				968694D719CB59710030957B /* MasterViewController.m in Sources */,
+				968694D419CB59710030957B /* Atlas.xcdatamodeld in Sources */,
+				968694D119CB59710030957B /* AppDelegate.m in Sources */,
+				968694CE19CB59710030957B /* main.m in Sources */,
+				9686950319CB77460030957B /* Atlas.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968694E319CB59710030957B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968694EE19CB59710030957B /* AtlasTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		968694E919CB59710030957B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 968694C719CB59710030957B /* Atlas */;
+			targetProxy = 968694E819CB59710030957B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		968694DB19CB59710030957B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				968694DC19CB59710030957B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		968694E019CB59710030957B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				968694E119CB59710030957B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		968694EF19CB59710030957B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		968694F019CB59710030957B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		968694F219CB59710030957B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Atlas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		968694F319CB59710030957B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = Atlas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		968694F519CB59710030957B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AtlasTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/Atlas";
+			};
+			name = Debug;
+		};
+		968694F619CB59710030957B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AtlasTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Atlas.app/Atlas";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		968694C319CB59710030957B /* Build configuration list for PBXProject "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968694EF19CB59710030957B /* Debug */,
+				968694F019CB59710030957B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		968694F119CB59710030957B /* Build configuration list for PBXNativeTarget "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968694F219CB59710030957B /* Debug */,
+				968694F319CB59710030957B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		968694F419CB59710030957B /* Build configuration list for PBXNativeTarget "AtlasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968694F519CB59710030957B /* Debug */,
+				968694F619CB59710030957B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		968694D219CB59710030957B /* Atlas.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				968694D319CB59710030957B /* Atlas.xcdatamodel */,
+			);
+			currentVersion = 968694D319CB59710030957B /* Atlas.xcdatamodel */;
+			path = Atlas.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 968694C019CB59710030957B /* Project object */;
+}

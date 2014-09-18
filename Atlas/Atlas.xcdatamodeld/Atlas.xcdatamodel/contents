@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Person" representedClassName="Person">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="likesToHaveFun" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="261" positionY="189" width="128" height="88"/>
+    </elements>
+</model>
