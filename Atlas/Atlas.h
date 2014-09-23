@@ -14,5 +14,4 @@
 
 @interface Atlas : NSObject
 
-+ (id) fetchForReturnWithAttributes:(NSDictionary*)sentAttributes className:(NSString*)className;
 @end

@@ -13,10 +13,6 @@
 
 @interface AtlasModel : NSManagedObject
 
-@property (strong, nonatomic) CoreDataHelper *cdh;
-@property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSDictionary *attributes;
-
-- (id) initWithAttributes:(NSDictionary*)attributes;
 
 @end

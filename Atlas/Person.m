@@ -36,17 +36,4 @@
         }
     }
 }
-
-/*
-- (id) initWithAttributes:(NSDictionary*)sentAttributes {
-    if (self) {
-        self = [super initWithAttributes:sentAttributes];
-        id thisPerson = [Atlas fetchForReturnWithAttributes:sentAttributes className:NSStringFromClass([self class])];
-        [thisPerson printMe];
-//        self = thisPerson;
-        return [Atlas fetchForReturnWithAttributes:sentAttributes className:NSStringFromClass([self class])];
-    }
-    else return nil;
-}
-*/
 @end
