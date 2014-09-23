@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "CoreDataHelper.h"
+#import "Atlas.h"
 
-@interface AtlasModel : NSObject
+@interface AtlasModel : NSManagedObject
 
+@property (strong, nonatomic) CoreDataHelper *cdh;
+@property (strong, nonatomic) NSString *className;
 @property (strong, nonatomic) NSDictionary *attributes;
 
 - (id) initWithAttributes:(NSDictionary*)attributes;

@@ -7,6 +7,6 @@
         <userInfo/>
     </entity>
     <elements>
-        <element name="Person" positionX="261" positionY="189" width="128" height="88"/>
+        <element name="Person" positionX="261" positionY="189" width="128" height="90"/>
     </elements>
 </model>

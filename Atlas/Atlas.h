@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "CoreDataHelper.h"
 #import "AtlasModel.h"
+#import "AppDelegate.h"
 
 @interface Atlas : NSObject
 
++ (id) fetchForReturnWithAttributes:(NSDictionary*)sentAttributes className:(NSString*)className;
 @end

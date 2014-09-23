@@ -12,7 +12,7 @@
 #define RunningLog if(0); else NSLog
 
 #pragma mark - FILES
-NSString *storeFilename = @"Grocery-Dude.sqlite";
+NSString *storeFilename = @"Atlas.sqlite";
 
 #pragma mark - PATHS
 - (NSString *)applicationDocumentsDirectory {

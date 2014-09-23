@@ -16,10 +16,10 @@
 		968694DF19CB59710030957B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 968694DE19CB59710030957B /* Images.xcassets */; };
 		968694E219CB59710030957B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 968694E019CB59710030957B /* LaunchScreen.xib */; };
 		968694EE19CB59710030957B /* AtlasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694ED19CB59710030957B /* AtlasTests.m */; };
-		968694F919CB5AC50030957B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694F819CB5AC50030957B /* Person.m */; };
 		968694FF19CB5BE70030957B /* AtlasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 968694FE19CB5BE70030957B /* AtlasModel.m */; };
 		9686950319CB77460030957B /* Atlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686950219CB77460030957B /* Atlas.m */; };
 		9686950619CB7E3D0030957B /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686950519CB7E3D0030957B /* CoreDataHelper.m */; };
+		9686950919CC703A0030957B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686950819CC703A0030957B /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,14 +49,14 @@
 		968694E719CB59710030957B /* AtlasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		968694EC19CB59710030957B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		968694ED19CB59710030957B /* AtlasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtlasTests.m; sourceTree = "<group>"; };
-		968694F719CB5AC50030957B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		968694F819CB5AC50030957B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		968694FD19CB5BE70030957B /* AtlasModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtlasModel.h; sourceTree = "<group>"; };
 		968694FE19CB5BE70030957B /* AtlasModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtlasModel.m; sourceTree = "<group>"; };
 		9686950119CB77460030957B /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
 		9686950219CB77460030957B /* Atlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atlas.m; sourceTree = "<group>"; };
 		9686950419CB7E3D0030957B /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		9686950519CB7E3D0030957B /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		9686950719CC703A0030957B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		9686950819CC703A0030957B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +140,10 @@
 				968694D219CB59710030957B /* Atlas.xcdatamodeld */,
 				968694FD19CB5BE70030957B /* AtlasModel.h */,
 				968694FE19CB5BE70030957B /* AtlasModel.m */,
-				968694F719CB5AC50030957B /* Person.h */,
-				968694F819CB5AC50030957B /* Person.m */,
 				9686950119CB77460030957B /* Atlas.h */,
 				9686950219CB77460030957B /* Atlas.m */,
+				9686950719CC703A0030957B /* Person.h */,
+				9686950819CC703A0030957B /* Person.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -272,12 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				968694FF19CB5BE70030957B /* AtlasModel.m in Sources */,
-				968694F919CB5AC50030957B /* Person.m in Sources */,
 				968694DA19CB59710030957B /* DetailViewController.m in Sources */,
 				9686950619CB7E3D0030957B /* CoreDataHelper.m in Sources */,
 				968694D719CB59710030957B /* MasterViewController.m in Sources */,
 				968694D419CB59710030957B /* Atlas.xcdatamodeld in Sources */,
 				968694D119CB59710030957B /* AppDelegate.m in Sources */,
+				9686950919CC703A0030957B /* Person.m in Sources */,
 				968694CE19CB59710030957B /* main.m in Sources */,
 				9686950319CB77460030957B /* Atlas.m in Sources */,
 			);
@@ -473,6 +473,7 @@
 				968694F319CB59710030957B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		968694F419CB59710030957B /* Build configuration list for PBXNativeTarget "AtlasTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +482,7 @@
 				968694F619CB59710030957B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
