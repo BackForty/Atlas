@@ -32,10 +32,11 @@
     itsaMe.attributes = @{@"email":@"jasonpwelch@yahoo.com"};
     NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
 
+    itsaMe.attributes = @{@"name":@"jason", @"createdAt":[NSDate date]};
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
 //    itsaMe = [Atlas fetchForReturnWithAttributes:personAttributes className:@"Person"];
-//    [itsaMe printMe];
-
-
+    [itsaMe printMe];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -48,7 +49,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self cdh];
+//    [self cdh];
     [self testing];
 }
 

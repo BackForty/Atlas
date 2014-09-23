@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSNumber * likesToHaveFun;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate *createdAt;
 
 - (void) printMe;
 

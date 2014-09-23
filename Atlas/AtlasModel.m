@@ -24,46 +24,7 @@ static NSArray const *kPropertyKeys;
 @synthesize className;
 @synthesize attributes;
 
-#pragma mark - Custom Inits
-
-- (id) init {
-
-    if (self) {
-        self = [super init];
-        className = NSStringFromClass([self class]);
-
-        // Create arrays of property strings and valid value types
-        [self arrayKeysForObject];
-
-        // Setup local Core Data Helper
-        cdh = [(AppDelegate*) [[UIApplication sharedApplication] delegate] cdh];
-
-//        [self addObserver:self forKeyPath:@"attributes"
-//                  options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew)
-//                  context:NULL];
-
-        return self;
-    }
-    else return nil;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change
-                       context:(void *)context {
-    if ([keyPath isEqualToString:@"attributes"]) {
-        NSDictionary *oldValue = [change objectForKey:NSKeyValueChangeOldKey];
-        NSDictionary *sentValue = [change objectForKey:NSKeyValueChangeNewKey];
-        NSMutableDictionary *newValue = [[NSMutableDictionary alloc] initWithDictionary:oldValue];
-
-        for (NSString *key in sentValue) {
-            if (oldValue[key]) {
-                [newValue removeObjectForKey:key];
-            }
-            [newValue setObject:sentValue[key] forKey:key];
-        }
-
-        [self setValue:[NSDictionary dictionaryWithDictionary:newValue] forKey:@"attributes"];
-    }
-}
+#pragma mark - Custom setters
 
 - (void) setAttributes:(NSDictionary*)receivedAttributes {
     RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -84,11 +45,28 @@ static NSArray const *kPropertyKeys;
     }
     else attributes = receivedAttributes;
 }
+/*
+#pragma mark - Custom Inits
+
+- (id) init {
+
+    if (self) {
+        self = [super init];
+        className = NSStringFromClass([self class]);
+
+        // Create arrays of property strings and valid value types
+        [self arrayKeysForObject];
+
+        // Setup local Core Data Helper
+        cdh = [(AppDelegate*) [[UIApplication sharedApplication] delegate] cdh];
+
+        return self;
+    }
+    else return nil;
+}
 
 - (id) initWithAttributes:(NSDictionary*)sentAttributes {
     RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-
-//    NSMutableDictionary *
 
     if (self) {
         self = [self init];
@@ -132,6 +110,43 @@ static NSArray const *kPropertyKeys;
     else return nil;
 }
 
+#pragma mark - Helper Methods
+
+// Uses the objc/runtime ability to determine a class's property and stuffs a string of that property in an array to be returned
+- (void) arrayKeysForObject {
+    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+
+    NSMutableArray *propertyNames = [NSMutableArray new];
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
+
+    for(i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        const char *propName = property_getName(property);
+        [propertyNames addObject:[NSString stringWithFormat:@"%s",propName]];
+    }
+
+    kPropertyKeys = [NSArray arrayWithArray:propertyNames];
+}
+
+// Checking to see if the values in the sent dictionary are the right class types
+- (NSDictionary*) validateKeysInAttributes: (NSDictionary*)sentAttributes forObject: (id)obj {
+    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+
+    NSMutableDictionary *validating = [NSMutableDictionary new];
+
+    for (NSString *propName in kPropertyKeys) {
+        BOOL valid = NO;
+
+        if ([sentAttributes valueForKey:propName]) {
+            valid = YES;
+        }
+        [validating setObject:[NSNumber numberWithBool:valid] forKey:propName];
+    }
+    return [NSDictionary dictionaryWithDictionary:validating];
+}
+
+// Trying to update object with entity fetched from Core Data
 - (id) fetchForReturnWithAttributes:(NSDictionary*)sentAttributes {
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:className];
@@ -170,43 +185,5 @@ static NSArray const *kPropertyKeys;
 
     return [fetchedObjects firstObject];
 }
-
-// Uses the objc/runtime ability to determine a class's property and stuffs a string of that property in an array to be returned
-- (void) arrayKeysForObject {
-    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-
-    NSMutableArray *propertyNames = [NSMutableArray new];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-
-    for(i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
-        const char *propName = property_getName(property);
-        [propertyNames addObject:[NSString stringWithFormat:@"%s",propName]];
-    }
-
-    kPropertyKeys = [NSArray arrayWithArray:propertyNames];
-}
-
-// Checking to see if the values in the sent dictionary are the right class types
-- (NSDictionary*) validateKeysInAttributes: (NSDictionary*)sentAttributes forObject: (id)obj {
-    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
-
-    NSMutableDictionary *validating = [NSMutableDictionary new];
-
-    for (NSString *propName in kPropertyKeys) {
-        BOOL valid = NO;
-
-        if ([sentAttributes valueForKey:propName]) {
-            /*
-            if ([[obj valueForKey:propName] isKindOfClass:[[sentAttributes valueForKey:propName] class]]) { */
-                valid = YES;
-//            }
-        }
-        [validating setObject:[NSNumber numberWithBool:valid] forKey:propName];
-    }
-
-    return [NSDictionary dictionaryWithDictionary:validating];
-}
-
+*/
 @end

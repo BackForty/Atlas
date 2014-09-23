@@ -11,10 +11,33 @@
 
 @implementation Person
 
-@dynamic email;
-@dynamic likesToHaveFun;
-@dynamic name;
+@synthesize email;
+@synthesize likesToHaveFun;
+@synthesize name;
+@synthesize createdAt;
 
+@dynamic attributes; // From super class
+
+- (void) printMe {
+    NSLog(@"\n\n***PERSON VALUES***\n\nName: %@\nEmail: %@\nLikes to have fun: %@\n\n", self.name, self.email, ((self.likesToHaveFun)? @"YES" : @"NO"));
+}
+
+- (void) setAttributes:(NSDictionary*)receivedAttributes {
+    [super setAttributes:receivedAttributes];
+
+    for (NSString *key in self.attributes) {
+        if ([key isEqualToString:@"name"]) {
+            self.name = [self.attributes valueForKey:key];
+        } else if ([key isEqualToString:@"createdAt"]) {
+            self.createdAt = [self.attributes valueForKey:key];
+        } else { // Just adding values so that printMe will run without crashing
+            self.email = @"person@example.com";
+            self.likesToHaveFun = [NSNumber numberWithBool:YES];
+        }
+    }
+}
+
+/*
 - (id) initWithAttributes:(NSDictionary*)sentAttributes {
     if (self) {
         self = [super initWithAttributes:sentAttributes];
@@ -25,9 +48,5 @@
     }
     else return nil;
 }
-
-- (void) printMe {
-    NSLog(@"\n\n***PERSON VALUES***\n\nName: %@\nEmail: %@\nLikes to have fun: %@\n\n", self.name, self.email, ((self.likesToHaveFun)? @"YES" : @"NO"));
-}
-
+*/
 @end
