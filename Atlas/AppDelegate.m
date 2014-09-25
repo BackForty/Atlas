@@ -16,7 +16,7 @@
 @end
 
 @implementation AppDelegate
-
+/*
 - (void) testing {
     NSDictionary *personAttributes = @{
                                        @"name":@"Jason",
@@ -37,7 +37,7 @@
 
     [itsaMe printMe];
 }
-
+*/
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
@@ -48,7 +48,6 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [self testing];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
