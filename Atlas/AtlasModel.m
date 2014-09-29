@@ -44,4 +44,11 @@ static NSArray const *kPropertyKeys;
     else attributes = receivedAttributes;
 }
 
++ (id) withAttributes:(NSDictionary*)receivedAttributes {
+    AtlasModel *newAM = [[AtlasModel alloc] init];
+    newAM.attributes = receivedAttributes;
+
+    return newAM;
+}
+
 @end

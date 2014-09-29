@@ -15,4 +15,5 @@
 
 @property (strong, nonatomic) NSDictionary *attributes;
 
++ (id) withAttributes:(NSDictionary*)attributes;
 @end

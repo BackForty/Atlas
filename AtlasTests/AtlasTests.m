@@ -8,16 +8,31 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+//
+// Importing the application specific header files
+#import "AppDelegate.h"
+#import "MasterViewController.h"
+#import "Person.h"
+#import "AtlasModel.h"
 
-@interface AtlasTests : XCTestCase
 
+@interface BasicTests : XCTestCase {
+    // Add instance variables for testing
+@private
+    Person *itsaMe;
+    Person *newPerson;
+}
 @end
 
-@implementation AtlasTests
+@implementation BasicTests
+
+#pragma mark - Setup and Teardown
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    itsaMe = [Person new];
+
 }
 
 - (void)tearDown {
@@ -25,16 +40,59 @@
     [super tearDown];
 }
 
-- (void)testExample {
+#pragma mark - Test Methods
+
+- (void)testAtlasModelCreation {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+//    XCTAssert(YES, @"Pass");
+
+
+    NSDictionary *personAttributes = @{
+                                       @"name":@"Jason",
+                                       @"email":@"jason@inthebackforty.com",
+                                       @"likesToHaveFun":[NSNumber numberWithBool:YES],
+                                       };
+
+    itsaMe.attributes = personAttributes;
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    XCTAssertEqualObjects(personAttributes, itsaMe.attributes);
 }
 
+- (void) testOverwriteAttributes {
+    itsaMe.attributes = @{@"email":@"jasonpwelch@yahoo.com"};
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    XCTAssertEqualObjects(itsaMe.attributes[@"email"], @"jasonpwelch@yahoo.com");
+}
+
+- (void) testSubclassPropertyCreation {
+    NSDate *testDate = [NSDate date];
+    itsaMe.attributes = @{@"name":@"jason", @"createdAt":testDate};
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    XCTAssertEqualObjects(itsaMe.name, @"jason");
+    XCTAssertEqualObjects(itsaMe.createdAt, testDate);
+}
+
+- (void) testQuickInstantiation {
+    NSDictionary *personAttributes = @{
+                                       @"name":@"Flip",
+                                       @"email":@"flip@inthebackforty.com",
+                                       @"likesToHaveFun":[NSNumber numberWithBool:YES],
+                                       };
+
+    newPerson = [Person withAttributes:personAttributes];
+    itsaMe.attributes = personAttributes;
+    XCTAssertNotNil(newPerson);
+    XCTAssertEqualObjects(newPerson.attributes[@"name"], itsaMe.attributes[@"name"]);
+}
+/*
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
 }
-
+*/
 @end
