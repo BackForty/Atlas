@@ -16,6 +16,7 @@
 @end
 
 @implementation MasterViewController
+/*
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -28,8 +29,6 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-
-    AtlasModel *atMod = [AtlasModel new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -200,7 +199,7 @@
     [self.tableView endUpdates];
 }
 
-/*
+
 // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
 
  - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller

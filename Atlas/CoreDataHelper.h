@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @interface CoreDataHelper :NSObject
-
+/*
 @property (nonatomic, readonly) NSManagedObjectContext       *context;
 @property (nonatomic, readonly) NSManagedObjectModel         *model;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *coordinator;
@@ -18,4 +18,5 @@
 
 - (void)setupCoreData;
 - (void)saveContext;
+ */
 @end

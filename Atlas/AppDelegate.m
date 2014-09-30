@@ -9,20 +9,49 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "Person.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+/*
+- (void) testing {
+    NSDictionary *personAttributes = @{
+                                       @"name":@"Jason",
+                                       @"email":@"jason@inthebackforty.com",
+                                       @"likesToHaveFun":[NSNumber numberWithBool:YES],
+                                       };
 
+    Person *itsaMe = [[Person alloc] init];
 
+    itsaMe.attributes = personAttributes;
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    itsaMe.attributes = @{@"email":@"jasonpwelch@yahoo.com"};
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    itsaMe.attributes = @{@"name":@"jason", @"createdAt":[NSDate date]};
+    NSLog(@"\n\nATTRIBUTES: %@", itsaMe.attributes);
+
+    [itsaMe printMe];
+}
+*/
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -33,14 +62,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self saveContext];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -115,7 +137,7 @@
 }
 
 #pragma mark - Core Data Saving support
-
+#warning May be redundant with use of Atlas
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {

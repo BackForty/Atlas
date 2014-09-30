@@ -8,116 +8,82 @@
 
 #import "AtlasModel.h"
 #import <objc/runtime.h>
+#import <CoreData/CoreData.h>
+#import "CoreDataHelper.h"
+#import "AppDelegate.h"
+#import "Person.h"
 
 @interface AtlasModel ()
 #define RunningLog if(0); else NSLog
-@property (strong, nonatomic) NSArray *propertyKeys;
-@property (strong, nonatomic) id obj;
+@property (strong, nonatomic) Atlas* atlas;
 @end
 
 @implementation AtlasModel
 
-#pragma mark - Custom Inits
+@synthesize attributes;
+@synthesize atlas;
+@synthesize className;
 
-- (id) init {
+#pragma mark - Custom setter
 
-    if (self) {
-        self = [super init];
-
-        // Create arrays of property strings and valid value types
-        id obj = self;
-        [self arrayKeysForObject:obj];
-
-        return self;
-    }
-    else return nil;
-}
-
-- (id) initWithAttributes:(NSDictionary*)attributes {
+- (void) setAttributes:(NSDictionary*)receivedAttributes {
     RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
 
-    if (self) {
-        self = [super init];
-        self.obj = self;
+    // Embedded inits
 
-        [self updateWithAttributes:attributes];
+    if (!className)
+        className = NSStringFromClass([self class]);
 
-        self = self.obj;
-        return self;
-    }
-    else return nil;
-}
+    // Handling existing attributes
+    if (attributes) {
 
--(void)updateWithAttributes: (NSDictionary*)attributes {
+        NSDictionary *oldValue = attributes;
+        NSDictionary *sentValue = receivedAttributes;
+        NSMutableDictionary *newValue = [[NSMutableDictionary alloc] initWithDictionary:oldValue];
 
-    // To use for an Alert or log
-    NSMutableArray *invalidPropNames = [NSMutableArray new];
-    NSString *errorMessage = @"The following properties were not loaded properly:\n";
-
-    // These property strings are then paired with bools (in NSNumber format) telling whether or not the received obj has such properties
-    NSDictionary *keyValidation = [self validateKeysInAttributes:attributes forObject:self.obj];
-
-    for (NSString *propertyName in attributes) {
-        BOOL isValid = NO;
-
-        if ([self.propertyKeys containsObject:propertyName]) {
-            isValid = [[keyValidation valueForKey:propertyName] boolValue];
-
-            if (isValid) {
-                [self.obj setObject:[attributes valueForKey:propertyName] forKey:propertyName];
+        for (NSString *key in sentValue) {
+            if (oldValue[key]) {
+                [newValue removeObjectForKey:key];
             }
+            [newValue setObject:sentValue[key] forKey:key];
         }
-        if (!isValid) {
-            [invalidPropNames addObject:propertyName];
-        }
+        attributes = [NSDictionary dictionaryWithDictionary:newValue];
     }
-    for (NSString *invalidProp in invalidPropNames) {
-        errorMessage = [errorMessage stringByAppendingString:[NSString stringWithFormat:@"%@\n", invalidProp]];
-    }
-    NSLog(@"%@", errorMessage);
+    else attributes = receivedAttributes; // Assign new attributes
 }
 
-// Uses the objc/runtime ability to determine a class's property and stuffs a string of that property in an array to be returned
-- (void) arrayKeysForObject: (id)obj {
+- (void) save {
     RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
 
-    NSMutableArray *propertyNames = [NSMutableArray new];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([obj class], &outCount);
-
-    for(i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
-        const char *propName = property_getName(property);
-        [propertyNames addObject:[NSString stringWithFormat:@"%s",propName]];
+    if (!atlas) {
+        static dispatch_once_t predicate;
+        dispatch_once(&predicate, ^{
+            atlas = [[Atlas alloc] init];
+        });
+        //        [atlas setupCoreData];
     }
-
-    self.propertyKeys = [NSArray arrayWithArray:propertyNames];
+    [atlas saveClassNamed:className withAttributes:attributes];
 }
 
-// Checking to see if the values in the sent dictionary are the right class types
-- (NSDictionary*) validateKeysInAttributes: (NSDictionary*)attributes forObject: (id)obj {
-    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
++ (id) withAttributes:(NSDictionary*)receivedAttributes {
+    AtlasModel *newAM = [[AtlasModel alloc] init];
+    newAM.attributes = receivedAttributes;
 
-    NSMutableDictionary *validating = [NSMutableDictionary new];
-
-    for (NSString *propName in self.propertyKeys) {
-        BOOL valid = NO;
-
-        if ([attributes valueForKey:propName]) {
-            if ([[obj valueForKey:propName] isKindOfClass:[[attributes valueForKey:propName] class]]) {
-                valid = YES;
-            }
-          /*  else if ([[[attributes valueForKey:propName] class] isKindOfClass:[NSNumber class]]) {
-                NSNumber *couldBeBool = [attributes valueForKey:propName];
-                if ([couldBeBool isEqual: @0] || [couldBeBool  isEqual: @1]) {
-                    valid = YES;
-                }
-            } */
-        }
-        [validating setObject:[NSNumber numberWithBool:valid] forKey:propName];
-    }
-
-    return [NSDictionary dictionaryWithDictionary:validating];
+    return newAM;
 }
+
+//- (BOOL) existsInCoreData {
+//    RunningLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+//
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:className];
+//    NSPredicate *filter = [NSPredicate predicateWithFormat:@"id == %@", attributes[@"id"]];
+//    [request setPredicate:filter];
+//
+//    NSArray *fetchedObject = [atlas.coreDataDelegate.managedObjectContext executeFetchRequest:request error:nil];
+//    if (fetchedObject.count == 1) {
+//        return YES;
+//    } else
+//        return NO;
+//}
 
 @end
