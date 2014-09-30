@@ -8,7 +8,7 @@
 
 #import "CoreDataHelper.h"
 
-@implementation CoreDataHelper
+@implementation CoreDataHelper /*
 #define RunningLog if(0); else NSLog
 
 #pragma mark - FILES
@@ -100,6 +100,6 @@ NSString *storeFilename = @"Atlas.sqlite";
         NSLog(@"SKIPPED _context save, there are no changes!");
     }
 }
-
+*/
 @end
 

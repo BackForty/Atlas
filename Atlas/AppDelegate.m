@@ -137,7 +137,7 @@
 }
 
 #pragma mark - Core Data Saving support
-
+#warning May be redundant with use of Atlas
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {

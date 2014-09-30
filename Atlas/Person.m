@@ -28,6 +28,7 @@
     for (NSString *key in self.attributes) {
         if ([key isEqualToString:@"name"]) {
             self.name = [self.attributes valueForKey:key];
+//            [super setAttributes:@{@"id":self.name}]; // Setting name as the entity's unique identifier
         } else if ([key isEqualToString:@"createdAt"]) {
             self.createdAt = [self.attributes valueForKey:key];
         } else { // Just adding values so that printMe will run without crashing
